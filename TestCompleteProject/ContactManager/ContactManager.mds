@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TestComplete project definition.
+
+  This file lists the project's items so the layout is self-documenting in the
+  repository. Open ContactManagerSuite.pjs in TestComplete to work with it; if
+  TestComplete regenerates internal GUIDs on first open, commit the result.
+-->
+<Project Name="ContactManager" Version="15.0">
+
+  <ScriptLanguage>Python</ScriptLanguage>
+
+  <TestedApps>
+    <TestedApp Name="ContactManager"
+               Path="..\..\sut\ContactManager\bin\Release\net8.0-windows\ContactManager.exe"
+               Launch="Simple" />
+  </TestedApps>
+
+  <Script>
+    <Unit Name="BaseScreen"   FileName="Script\ScreenObjects\BaseScreen.py" />
+    <Unit Name="MainScreen"   FileName="Script\ScreenObjects\MainScreen.py" />
+    <Unit Name="AboutDialog"  FileName="Script\ScreenObjects\AboutDialog.py" />
+    <Unit Name="Config"       FileName="Script\Support\Config.py" />
+    <Unit Name="Waits"        FileName="Script\Support\Waits.py" />
+    <Unit Name="Hooks"        FileName="Script\Support\Hooks.py" />
+    <Unit Name="CommonSteps"  FileName="Script\StepDefs\CommonSteps.py" />
+    <Unit Name="ContactSteps" FileName="Script\StepDefs\ContactSteps.py" />
+    <Unit Name="AboutSteps"   FileName="Script\StepDefs\AboutSteps.py" />
+  </Script>
+
+  <BDD>
+    <FeatureFolder Path="Features" />
+    <StepDefinitionUnits>
+      <Unit Name="CommonSteps" />
+      <Unit Name="ContactSteps" />
+      <Unit Name="AboutSteps" />
+    </StepDefinitionUnits>
+  </BDD>
+
+  <NameMapping FileName="NameMapping\NameMapping.tcNM" />
+
+  <Events>
+    <Event Name="OnStartTest"    Unit="Hooks" Routine="on_scenario_start" Scope="Scenario" />
+    <Event Name="OnStopTest"     Unit="Hooks" Routine="on_scenario_end"   Scope="Scenario" />
+  </Events>
+
+  <Variables>
+    <Variable Name="AppPath" Type="String"
+              DefaultValue="..\..\sut\ContactManager\bin\Release\net8.0-windows\ContactManager.exe" />
+    <Variable Name="WaitTimeoutMs" Type="Integer" DefaultValue="10000" />
+  </Variables>
+
+</Project>

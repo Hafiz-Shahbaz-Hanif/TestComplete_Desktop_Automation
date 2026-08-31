@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TestComplete / TestExecute project suite.
+  Open this file with SmartBear TestComplete 15 (or newer).
+-->
+<ProjectSuite Name="ContactManagerSuite" Version="15.0">
+  <ProjectSuiteData>
+    <Projects>
+      <Project Name="ContactManager" FileName="ContactManager\ContactManager.mds" Enabled="1" />
+    </Projects>
+    <ScriptLanguage>Python</ScriptLanguage>
+  </ProjectSuiteData>
+</ProjectSuite>
