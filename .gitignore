@@ -1,0 +1,17 @@
+# .NET build output (SUT)
+[Bb]in/
+[Oo]bj/
+*.user
+
+# TestComplete / TestExecute artifacts
+Log/
+*.mht
+*.tclog
+project-suite.tcCfg
+*.tcCFG
+ProjectSuite1.pjs.local
+*.bak
+
+.vs/
+.idea/
+.DS_Store
