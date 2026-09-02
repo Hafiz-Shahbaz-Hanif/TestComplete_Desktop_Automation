@@ -12,8 +12,12 @@ from ScreenObjects.BaseScreen import BaseScreen
 class AboutDialog(BaseScreen):
     ROOT_ALIAS = "AboutForm"
 
+    VERSION = "lblVersion"
     MESSAGE = "lblAbout"
     OK_BUTTON = "btnAboutOk"
+
+    def version_text(self):
+        return self.get_text(self.VERSION)
 
     def message_text(self):
         return self.get_text(self.MESSAGE)
