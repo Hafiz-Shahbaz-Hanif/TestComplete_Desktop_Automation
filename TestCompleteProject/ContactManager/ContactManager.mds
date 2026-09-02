@@ -17,15 +17,18 @@
   </TestedApps>
 
   <Script>
-    <Unit Name="BaseScreen"   FileName="Script\ScreenObjects\BaseScreen.py" />
-    <Unit Name="MainScreen"   FileName="Script\ScreenObjects\MainScreen.py" />
-    <Unit Name="AboutDialog"  FileName="Script\ScreenObjects\AboutDialog.py" />
-    <Unit Name="Config"       FileName="Script\Support\Config.py" />
-    <Unit Name="Waits"        FileName="Script\Support\Waits.py" />
-    <Unit Name="Hooks"        FileName="Script\Support\Hooks.py" />
-    <Unit Name="CommonSteps"  FileName="Script\StepDefs\CommonSteps.py" />
-    <Unit Name="ContactSteps" FileName="Script\StepDefs\ContactSteps.py" />
-    <Unit Name="AboutSteps"   FileName="Script\StepDefs\AboutSteps.py" />
+    <Unit Name="BaseScreen"    FileName="Script\ScreenObjects\BaseScreen.py" />
+    <Unit Name="MainScreen"    FileName="Script\ScreenObjects\MainScreen.py" />
+    <Unit Name="AboutDialog"   FileName="Script\ScreenObjects\AboutDialog.py" />
+    <Unit Name="ExportDialog"  FileName="Script\ScreenObjects\ExportDialog.py" />
+    <Unit Name="Config"        FileName="Script\Support\Config.py" />
+    <Unit Name="Waits"         FileName="Script\Support\Waits.py" />
+    <Unit Name="Hooks"         FileName="Script\Support\Hooks.py" />
+    <Unit Name="CommonSteps"   FileName="Script\StepDefs\CommonSteps.py" />
+    <Unit Name="ContactSteps"  FileName="Script\StepDefs\ContactSteps.py" />
+    <Unit Name="EditSteps"     FileName="Script\StepDefs\EditSteps.py" />
+    <Unit Name="ExportSteps"   FileName="Script\StepDefs\ExportSteps.py" />
+    <Unit Name="AboutSteps"    FileName="Script\StepDefs\AboutSteps.py" />
   </Script>
 
   <BDD>
@@ -33,6 +36,8 @@
     <StepDefinitionUnits>
       <Unit Name="CommonSteps" />
       <Unit Name="ContactSteps" />
+      <Unit Name="EditSteps" />
+      <Unit Name="ExportSteps" />
       <Unit Name="AboutSteps" />
     </StepDefinitionUnits>
   </BDD>
@@ -48,6 +53,7 @@
     <Variable Name="AppPath" Type="String"
               DefaultValue="..\..\sut\ContactManager\bin\Release\net8.0-windows\ContactManager.exe" />
     <Variable Name="WaitTimeoutMs" Type="Integer" DefaultValue="10000" />
+    <Variable Name="ProjectTemp" Type="String" DefaultValue="C:\Temp" />
   </Variables>
 
 </Project>
