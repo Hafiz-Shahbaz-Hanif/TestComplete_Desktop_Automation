@@ -58,6 +58,26 @@ class BaseScreen(object):
     def get_text(self, name):
         return self.control(name).wText
 
+    def is_enabled(self, name):
+        return self.control(name).Enabled
+
+    def select_combo(self, name, value):
+        combo = self.control(name)
+        Waits.until_enabled(combo, Config.WAIT_TIMEOUT_MS)
+        combo.ClickItem(value)
+
+    def combo_value(self, name):
+        return self.control(name).wText
+
+    def set_checkbox(self, name, checked):
+        box = self.control(name)
+        Waits.until_enabled(box, Config.WAIT_TIMEOUT_MS)
+        if bool(box.wChecked) != bool(checked):
+            box.ClickButton()
+
+    def checkbox_checked(self, name):
+        return bool(self.control(name).wChecked)
+
     def menu_select(self, path):
         """Select a menu item by its caption path, e.g. 'File|Exit'."""
         self.root.MainMenu.Click(path)

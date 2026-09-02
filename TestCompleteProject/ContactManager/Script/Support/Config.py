@@ -27,3 +27,7 @@ WAIT_TIMEOUT_MS = int(_project_var("WaitTimeoutMs", 10000))
 
 # Polling interval used by the custom waiters.
 POLL_INTERVAL_MS = 200
+
+# Fallback scratch folder for artefacts a scenario writes (e.g. the CSV export),
+# used only when the TEMP environment variable is not set on the agent.
+PROJECT_TEMP = _project_var("ProjectTemp", "C:\\Temp")
