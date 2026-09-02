@@ -12,13 +12,21 @@ public sealed class AboutForm : Form
         StartPosition = FormStartPosition.CenterParent;
         MinimizeBox = false;
         MaximizeBox = false;
-        ClientSize = new Size(300, 120);
+        ClientSize = new Size(320, 140);
+
+        var version = new Label
+        {
+            Name = "lblVersion",
+            Text = "Contact Manager 2.0",
+            Location = new Point(16, 16),
+            AutoSize = true,
+        };
 
         var message = new Label
         {
             Name = "lblAbout",
-            Text = "Contact Manager 1.0\nSample app for the TestComplete automation showcase.",
-            Location = new Point(16, 16),
+            Text = "Sample app for the TestComplete automation showcase.\nNo proprietary code.",
+            Location = new Point(16, 40),
             AutoSize = true,
         };
 
@@ -27,10 +35,11 @@ public sealed class AboutForm : Form
             Name = "btnAboutOk",
             Text = "OK",
             DialogResult = DialogResult.OK,
-            Location = new Point(110, 78),
+            Location = new Point(120, 96),
             Width = 80,
         };
 
+        Controls.Add(version);
         Controls.Add(message);
         Controls.Add(ok);
         AcceptButton = ok;
