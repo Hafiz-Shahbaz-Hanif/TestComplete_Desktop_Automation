@@ -22,10 +22,23 @@ identifiers and rewrite them into its own format — commit that result.
 
 ## Running
 
-* **All scenarios:** run the project.
-* **Smoke only:** feature filter `@smoke`, or TestExecute `/tags:@smoke`.
+* **All scenarios:** run the project (~126 scenarios / outline examples across 15 feature files).
+* **Smoke only:** feature filter `@smoke`, or TestExecute `/tags:@smoke` (one happy path per area).
 * **Headless / CI:** `TestExecute.exe "ContactManagerSuite.pjs" /run /exit /ExportLog:log.mht`
   on a Windows agent with an interactive desktop session.
+* **Sharded:** partition the `Features/` folder across agents — see
+  `../docs/DISTRIBUTED-EXECUTION.md`.
+
+## Feature map
+
+| Feature file | Area |
+|---|---|
+| `AddContact`, `AddValidation`, `PhoneValidation`, `DuplicateEmail` | creating contacts + field validation |
+| `EditContact`, `EditValidation` | editing an existing contact, Save-button state machine |
+| `DeleteContact` | delete via button and via the Edit menu |
+| `SearchContact`, `FilterByCategory`, `SortContacts`, `CountLabel` | list filtering, sorting and the live count |
+| `ExportContacts` | File ▸ Export to CSV through the native Save dialog |
+| `NewList`, `StatusMessages`, `About` | File ▸ New, status-bar wording, the modal About dialog |
 
 ## Why there is no CI workflow
 

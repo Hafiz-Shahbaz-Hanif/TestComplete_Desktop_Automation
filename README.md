@@ -8,7 +8,8 @@
 
 A reference implementation of a **Windows desktop** automation framework in
 **SmartBear TestComplete**, using **Python scripting**, a **Screen Object Model**
-and **Gherkin/BDD**, driving a small open-source **WinForms** application.
+and **Gherkin/BDD**, driving a small open-source **WinForms** application —
+**~126 scenarios** across 15 feature files.
 
 > ### Disclaimer
 > This repository is a **pattern and architecture showcase**. All code here is
@@ -22,8 +23,9 @@ and **Gherkin/BDD**, driving a small open-source **WinForms** application.
 
 | Path | Contents |
 |---|---|
-| `sut/` | **Contact Manager** — a ~150-line .NET 8 WinForms app that is the automation target. Build with `dotnet build`. |
-| `TestCompleteProject/` | The TestComplete project: Python screen objects, step definitions, support code, Gherkin features, and a documented NameMapping. |
+| `sut/` | **Contact Manager** — a small .NET 8 WinForms app that is the automation target: add / edit / delete contacts, phone + category + favourite fields, validation, search / category / favourite filters, sort, CSV export, About dialog. Build with `dotnet build`. |
+| `TestCompleteProject/` | The TestComplete project: Python screen objects, step definitions, support code, 15 Gherkin feature files, and a documented NameMapping. |
+| `CLAUDE.md` + `.claude/` | The working agreement, subagents and skills for the **AI-assisted workflow** (screen-object authoring, NameMapping review, scenario triage, BDD audits). |
 | `docs/SCREEN-OBJECT-MODEL.md` | The layered SOM design and the rules that keep it maintainable. |
 | `docs/DISTRIBUTED-EXECUTION.md` | How an overnight desktop suite went from **72+ h to 2–3 h** by partitioning modules across runners. |
 | `docs/BDD-INTEGRATION.md` | How Gherkin steps bind to Python routines and screen objects. |
@@ -31,9 +33,10 @@ and **Gherkin/BDD**, driving a small open-source **WinForms** application.
 ## The framework at a glance
 
 ```
-Features/*.feature            →  Add / Delete / Search / About, in business language
+Features/*.feature            →  15 files: add / edit / delete / search / filter / sort /
+                                 export / validation / status / about — in business language
 Script/StepDefs/*.py          →  one routine per step: one screen call + one assertion
-Script/ScreenObjects/*.py     →  MainScreen, AboutDialog  (extend BaseScreen)
+Script/ScreenObjects/*.py     →  MainScreen, AboutDialog, ExportDialog  (extend BaseScreen)
 Script/Support/*.py           →  Config, Waits (explicit, no fixed delays), Hooks
 NameMapping/                  →  every control keyed on its WinForms control name
 ```
@@ -46,7 +49,10 @@ Design highlights:
   there are no `Delay(3000)` guesses in screen code.
 - **Deterministic scenarios** — a fresh app instance per scenario (hooks), each
   scenario owns its data, so scenarios run in any order and can be sharded.
-- **Modal dialogs are just screens** — `AboutDialog` demonstrates the modal wait.
+- **Data-driven** — behaviour that varies is a `Scenario Outline` with an
+  `Examples` table (categories, validation rules, search terms, sort orders).
+- **Modal and native dialogs are just screens** — `AboutDialog` (modal WinForms)
+  and `ExportDialog` (native `#32770` Save dialog) both extend `BaseScreen`.
 
 ## Running it
 

@@ -59,15 +59,19 @@ class MainScreen(BaseScreen):
 * **Actions return `self`** for fluency; **queries return data** (`list`, `int`,
   `str`) — never a raw TestComplete object, so steps can't leak mechanics.
 
-## Modal dialogs
+## Modal and native dialogs
 
-`AboutDialog` maps under the *process*, not under `MainForm`, and `wait_shown()`
-waits for the modal window. The same base class handles both — a modal dialog is
-just another screen.
+`AboutDialog` (a modal WinForms window) maps under the *process*, not under
+`MainForm`, and `wait_shown()` waits for the modal window. `ExportDialog` models
+the **native** Windows Save dialog (`WndClass = #32770`) the same way. The same
+base class and primitives handle all three — an in-app screen, a modal dialog and
+an OS dialog are the same shape.
 
 ## Why this scales
 
-On the real programme this pattern was applied across **30 report/sub-modules**
-and **2,235 automated cases**. New coverage means new *feature files* and, at
-most, a few new screen methods — the control-identity layer and the waiting
-strategy are written once.
+New coverage means new *feature files* and, at most, a few new screen methods —
+the control-identity layer (`NameMapping`) and the waiting strategy
+(`Support/Waits.py`) are written once. This repo's ~126 scenarios across 15
+feature files reuse the same ~4 screen objects. Because each scenario is
+independent (fresh app, own data), the feature folder partitions cleanly across
+runners — see [`DISTRIBUTED-EXECUTION.md`](DISTRIBUTED-EXECUTION.md).
