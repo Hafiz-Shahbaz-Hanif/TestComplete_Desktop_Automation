@@ -17,12 +17,18 @@ Requires the **.NET 8 SDK** on Windows (`winget install Microsoft.DotNet.SDK.8`)
 
 | Feature | Controls |
 |---|---|
-| Add a contact (name + email, with validation) | `txtFirstName`, `txtLastName`, `txtEmail`, `btnAdd` |
-| Reject duplicates / invalid email | `lblStatus` shows the reason |
-| Filter the list as you type | `txtSearch` |
-| Delete the selected contact | `lstContacts`, `btnDelete` |
-| Live count | `lblCount` |
-| File ▸ Exit | `menuStrip` ▸ `mnuFile` ▸ `mnuFileExit` |
+| Add a contact — name, email, phone, category, favourite | `txtFirstName`, `txtLastName`, `txtEmail`, `txtPhone`, `cboCategory`, `chkFavourite`, `btnAdd` |
+| Edit the selected contact and save changes | `btnEdit` / `mnuEditEdit`, `btnSave` |
+| Clear the entry form | `btnClear` |
+| Field validation — required name, email format, phone format, duplicate email | `lblStatus` shows the reason |
+| Filter as you type, by category, and by favourite | `txtSearch`, `cboFilterCategory`, `chkFavouritesOnly` |
+| Sort by name / email / category | `cboSort` |
+| Delete the selected contact | `lstContacts`, `btnDelete` / `mnuEditDelete` |
+| Live count (`N contact(s)` / `N of M contact(s)` when filtered) | `lblCount` |
+| File ▸ New list (clear all) | `menuStrip` ▸ `mnuFileNew` |
+| File ▸ Export to CSV… (native `SaveFileDialog`) | `mnuFileExport` |
+| File ▸ Exit | `mnuFileExit` |
+| Help ▸ About (modal dialog) | `mnuHelpAbout`, `AboutForm` |
 
 Every control has an explicit, stable `Name`, which is what the TestComplete
 **NameMapping** binds to (see `../TestCompleteProject/ContactManager/NameMapping/`).
