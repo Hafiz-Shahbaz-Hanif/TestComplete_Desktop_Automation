@@ -54,4 +54,7 @@ to the tests themselves.
 * **Fail fast per module, not per suite:** one module's crash must not block the
   other 14 from reporting.
 * **Keep ownership in the repo** (a `runners.yml`-style manifest) so re-balancing
-  is a reviewed change.
+  is a reviewed change. [`runners.yml`](../runners.yml) at the repo root is that
+  manifest's shape, applied to this sample's own modules — this suite is too
+  small to need distributing today, but the file is what you'd start editing
+  once it isn't.

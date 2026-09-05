@@ -1,0 +1,52 @@
+# Module -> runner ownership manifest, as described in docs/DISTRIBUTED-EXECUTION.md.
+#
+# This sample project has one module (ContactManager), so there is nothing to
+# distribute yet — this file exists to make the pattern concrete: it is what
+# you commit once a suite grows past a single machine's overnight window.
+# Re-balancing is a reviewed change to this file, not a script someone runs once
+# and forgets.
+#
+# schema:
+#   runners:
+#     <runner-id>:
+#       machine: <hostname or VM pool label>
+#       modules: [<Feature file stems this runner owns>]
+#       historical_minutes: <last known wall-clock time for this slice>
+#   merge:
+#     results_dir: <shared location every runner publishes its report to>
+#     notify: <where per-module pass/fail is posted>
+
+runners:
+  runner-a:
+    machine: qa-vm-01
+    modules:
+      - AddContact
+      - AddValidation
+      - EditContact
+      - EditValidation
+      - DuplicateEmail
+    historical_minutes: 18
+
+  runner-b:
+    machine: qa-vm-02
+    modules:
+      - DeleteContact
+      - SearchContact
+      - FilterByCategory
+      - SortContacts
+      - CountLabel
+    historical_minutes: 15
+
+  runner-c:
+    machine: qa-vm-03
+    modules:
+      - NewList
+      - ExportContacts
+      - PhoneValidation
+      - StatusMessages
+      - About
+    historical_minutes: 12
+
+merge:
+  results_dir: \\qa-share\testcomplete-results\contactmanager
+  notify: per-module pass/fail summary posted to the team channel after the last runner reports
