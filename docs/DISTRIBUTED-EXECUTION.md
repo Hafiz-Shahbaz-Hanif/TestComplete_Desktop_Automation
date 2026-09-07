@@ -24,7 +24,8 @@ often did not finish before the working day started.
    headless-desktop mode against a clean VM snapshot.
 4. **Collect and merge.** Every runner publishes its TestComplete log / JUnit
    summary to a shared location; a small merge step produces one consolidated
-   report and posts pass/fail per module.
+   report and posts pass/fail per module. See
+   [`scripts/merge-logs.md`](../scripts/merge-logs.md) for that step in detail.
 
 ```
         ┌───────────── scheduler (nightly) ─────────────┐
