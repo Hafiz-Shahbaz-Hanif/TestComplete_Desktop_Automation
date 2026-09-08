@@ -1,0 +1,23 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# This project is a documentation-heavy pattern showcase (TestComplete is licensed,
+# so there is nothing to run in CI). The one thing worth checking automatically is
+# that the cross-references between the docs, runners.yml and the SUT stay intact.
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check relative links in Markdown
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: "--offline --verbose --no-progress './**/*.md'"
+          fail: true
