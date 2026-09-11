@@ -67,6 +67,8 @@ cd sut && dotnet build -c Release      # build the SUT
 For frameworks you can clone and run in CI today, see the portfolio's
 **Playwright**, **Selenium** and **Cypress** repositories.
 
+See [`CHANGELOG.md`](CHANGELOG.md) for what shipped and when.
+
 ---
 
 ## Author
