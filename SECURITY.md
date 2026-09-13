@@ -10,7 +10,8 @@ run and is not executed in CI.
 
 If you find a real security issue in this repository (for example, a dependency
 with a known CVE, or a way the sample app or scripts could be misused), please
-open a [GitHub issue](../../issues/new) or email
+open a [GitHub issue](https://github.com/Hafiz-Shahbaz-Hanif/TestComplete_Desktop_Automation/issues/new)
+or email
 **shahbazhanif87@gmail.com**. There is no bug bounty; this is a demonstration
 project, but reports are still welcome and will be looked at.
 
