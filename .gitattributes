@@ -1,0 +1,13 @@
+# Normalize line endings so a Windows-only TestComplete checkout and a
+# cross-platform clone (CI, a contributor on macOS/Linux reading the docs and
+# the SUT) don't fight over CRLF/LF diffs.
+
+* text=auto eol=lf
+
+*.cs text eol=crlf
+*.sln text eol=crlf
+*.csproj text eol=crlf
+
+*.png binary
+*.jpg binary
+*.ico binary
