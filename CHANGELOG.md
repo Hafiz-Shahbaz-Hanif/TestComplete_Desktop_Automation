@@ -2,6 +2,25 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-09-19
+
+### Added
+- `.gitattributes` normalizing line endings across C#, docs and scripts.
+
+## 2026-09-16
+
+### Added
+- Dependabot for the SUT's NuGet packages and `github-actions`.
+
+## 2026-09-13
+
+### Added
+- `SECURITY.md`.
+
+### Fixed
+- `SECURITY.md` issues link now uses the absolute GitHub URL (a relative
+  `../../issues/new` resolved outside the repo and would fail the link check).
+
 ## 2026-09-08
 
 ### Added
