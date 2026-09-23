@@ -56,6 +56,26 @@ Sys
         └── Window("Button", "Save", 1)           → .SaveButton
 ```
 
+## Tab order (derived, not mapped)
+
+`MainForm.Designer.cs` never sets an explicit `TabIndex`, so the real tab order
+is the WinForms default: controls are visited in `Controls.AddRange` order,
+skipping any control whose `TabStop` is `false` — which, by default, is every
+`Label`. Reading `sut/ContactManager/MainForm.Designer.cs`'s `Controls.AddRange`
+call gives this real tab-stop order (labels and the two `StatusStrip`/`MenuStrip`
+containers, which are never tab stops, omitted):
+
+```
+txtFirstName → txtLastName → txtEmail → txtPhone → cboCategory → chkFavourite
+→ btnAdd → btnSave → btnEdit → btnClear
+→ txtSearch → cboFilterCategory → chkFavouritesOnly → cboSort
+→ lstContacts → btnDelete
+```
+
+`KeyboardAndFocus.feature` / `KeyboardAndFocusSteps.py` assert a prefix of this
+order. If the SUT ever gains an explicit `TabIndex` or reorders
+`Controls.AddRange`, re-derive this list from the source rather than guessing.
+
 ## Recreating it
 
 1. Open `ContactManagerSuite.pjs` in TestComplete.

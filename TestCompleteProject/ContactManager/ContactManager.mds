@@ -29,6 +29,7 @@
     <Unit Name="EditSteps"     FileName="Script\StepDefs\EditSteps.py" />
     <Unit Name="ExportSteps"   FileName="Script\StepDefs\ExportSteps.py" />
     <Unit Name="AboutSteps"    FileName="Script\StepDefs\AboutSteps.py" />
+    <Unit Name="KeyboardAndFocusSteps" FileName="Script\StepDefs\KeyboardAndFocusSteps.py" />
   </Script>
 
   <BDD>
@@ -39,6 +40,7 @@
       <Unit Name="EditSteps" />
       <Unit Name="ExportSteps" />
       <Unit Name="AboutSteps" />
+      <Unit Name="KeyboardAndFocusSteps" />
     </StepDefinitionUnits>
   </BDD>
 

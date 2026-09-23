@@ -35,7 +35,8 @@ runners:
       - FilterByCategory
       - SortContacts
       - CountLabel
-    historical_minutes: 15
+      - KeyboardAndFocus
+    historical_minutes: 17
 
   runner-c:
     machine: qa-vm-03

@@ -71,7 +71,7 @@ an OS dialog are the same shape.
 
 New coverage means new *feature files* and, at most, a few new screen methods —
 the control-identity layer (`NameMapping`) and the waiting strategy
-(`Support/Waits.py`) are written once. This repo's ~126 scenarios across 15
+(`Support/Waits.py`) are written once. This repo's ~140 scenarios across 16
 feature files reuse the same ~4 screen objects. Because each scenario is
 independent (fresh app, own data), the feature folder partitions cleanly across
 runners — see [`DISTRIBUTED-EXECUTION.md`](DISTRIBUTED-EXECUTION.md).

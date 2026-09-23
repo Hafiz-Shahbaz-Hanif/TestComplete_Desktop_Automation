@@ -2,6 +2,16 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-09-23
+
+### Added
+- `KeyboardAndFocus.feature` (12 scenarios): Tab order through the entry form,
+  derived from `MainForm.Designer.cs`'s real `Controls.AddRange` order (Labels
+  are not tab stops) rather than guessed — documented in `NameMapping.md`.
+- `BaseScreen.focus` / `.is_focused` / `.press_key` primitives.
+- Registered in `ContactManager.mds`; every step verified to resolve to exactly
+  one `KeyboardAndFocusSteps.py` routine, including every Examples row.
+
 ## 2026-09-22
 
 ### Added

@@ -9,7 +9,7 @@
 A reference implementation of a **Windows desktop** automation framework in
 **SmartBear TestComplete**, using **Python scripting**, a **Screen Object Model**
 and **Gherkin/BDD**, driving a small open-source **WinForms** application —
-**~126 scenarios** across 15 feature files.
+**~140 scenarios** across 16 feature files.
 
 > ### Disclaimer
 > This repository is a **pattern and architecture showcase**. All code here is
@@ -33,8 +33,8 @@ and **Gherkin/BDD**, driving a small open-source **WinForms** application —
 ## The framework at a glance
 
 ```
-Features/*.feature            →  15 files: add / edit / delete / search / filter / sort /
-                                 export / validation / status / about — in business language
+Features/*.feature            →  16 files: add / edit / delete / search / filter / sort /
+                                 export / validation / status / about / keyboard focus — in business language
 Script/StepDefs/*.py          →  one routine per step: one screen call + one assertion
 Script/ScreenObjects/*.py     →  MainScreen, AboutDialog, ExportDialog  (extend BaseScreen)
 Script/Support/*.py           →  Config, Waits (explicit, no fixed delays), Hooks

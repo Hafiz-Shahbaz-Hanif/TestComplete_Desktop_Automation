@@ -82,6 +82,23 @@ class BaseScreen(object):
         """Select a menu item by its caption path, e.g. 'File|Exit'."""
         self.root.MainMenu.Click(path)
 
+    def focus(self, name):
+        """Move keyboard focus to a control without changing its value."""
+        control = self.control(name)
+        Waits.until_enabled(control, Config.WAIT_TIMEOUT_MS)
+        if aqObject.IsSupported(control, "SetFocus"):
+            control.SetFocus()
+        else:
+            control.Click()
+
+    def is_focused(self, name):
+        """True when the named control currently holds keyboard focus."""
+        return bool(self.control(name).wFocused)
+
+    def press_key(self, key_spec):
+        """Send a key combination to the screen's root window, e.g. '[Tab]'."""
+        self.root.Keys(key_spec)
+
 
 def _is_button(control):
     try:
