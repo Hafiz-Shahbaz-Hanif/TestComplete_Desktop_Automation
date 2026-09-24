@@ -24,7 +24,7 @@ and **Gherkin/BDD**, driving a small open-source **WinForms** application —
 | Path | Contents |
 |---|---|
 | `sut/` | **Contact Manager** — a small .NET 8 WinForms app that is the automation target: add / edit / delete contacts, phone + category + favourite fields, validation, search / category / favourite filters, sort, CSV export, About dialog. Build with `dotnet build`. |
-| `TestCompleteProject/` | The TestComplete project: Python screen objects, step definitions, support code, 15 Gherkin feature files, and a documented NameMapping. |
+| `TestCompleteProject/` | The TestComplete project: Python screen objects, step definitions, support code, 16 Gherkin feature files, and a documented NameMapping. |
 | `CLAUDE.md` + `.claude/` | The working agreement, subagents and skills for the **AI-assisted workflow** (screen-object authoring, NameMapping review, scenario triage, BDD audits). |
 | `docs/SCREEN-OBJECT-MODEL.md` | The layered SOM design and the rules that keep it maintainable. |
 | `docs/DISTRIBUTED-EXECUTION.md` | How an overnight desktop suite went from **72+ h to 2–3 h** by partitioning modules across runners. |

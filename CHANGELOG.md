@@ -2,6 +2,14 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-09-24
+
+### Fixed
+- README's "What's in here" table still said "15 Gherkin feature files" after
+  yesterday's `KeyboardAndFocus.feature` addition brought it to 16 — the
+  headline "~140 scenarios across 16 feature files" line was already correct,
+  this was a second, missed mention.
+
 ## 2026-09-23
 
 ### Added
