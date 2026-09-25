@@ -1,9 +1,11 @@
 # TestComplete Desktop Automation — Screen Object Model + BDD
 
+[![Docs](https://github.com/Hafiz-Shahbaz-Hanif/TestComplete_Desktop_Automation/actions/workflows/docs.yml/badge.svg)](https://github.com/Hafiz-Shahbaz-Hanif/TestComplete_Desktop_Automation/actions/workflows/docs.yml)
 ![TestComplete](https://img.shields.io/badge/TestComplete-15%2B-2FA84F)
 ![Language](https://img.shields.io/badge/scripting-Python-3776AB?logo=python&logoColor=white)
 ![Pattern](https://img.shields.io/badge/pattern-Screen%20Object%20Model-blue)
 ![BDD](https://img.shields.io/badge/BDD-Gherkin-23D96C?logo=cucumber&logoColor=white)
+![Scenarios](https://img.shields.io/badge/scenarios-140-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 A reference implementation of a **Windows desktop** automation framework in

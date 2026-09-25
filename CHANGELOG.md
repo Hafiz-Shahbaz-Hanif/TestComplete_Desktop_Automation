@@ -2,6 +2,13 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-09-25
+
+### Added
+- A real `Docs` CI badge (the `docs.yml` link-check workflow, which actually
+  runs — unlike a fake "tests passing" badge this repo can't honestly claim)
+  and a `scenarios-140` badge to the README badge row.
+
 ## 2026-09-24
 
 ### Fixed
