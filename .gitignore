@@ -12,6 +12,10 @@ project-suite.tcCfg
 ProjectSuite1.pjs.local
 *.bak
 
+# Python bytecode (from syntax-checking the scripts outside TestComplete)
+__pycache__/
+*.pyc
+
 .vs/
 .idea/
 .DS_Store

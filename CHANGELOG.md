@@ -2,6 +2,13 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-04
+
+### Fixed
+- `.gitignore` now ignores `__pycache__/` and `*.pyc` — syntax-checking the
+  Python scripts outside TestComplete (`python -m py_compile`) leaves bytecode
+  next to them, and nothing was ignoring it.
+
 ## 2026-09-25
 
 ### Added
